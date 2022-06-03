@@ -1,0 +1,22 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          search-paths: config-data
+          password: ${GIT_PASSWORD}
+          username: ${GIT_USER}
+          uri: https://github.com/Mariela34/example-microservices.git
+          default-label: main
+        bootstrap: true
+      enabled: true
+  application:
+    name: Config-Server
+  security:
+    user:
+      name: root
+      password: s3cr3t
+
