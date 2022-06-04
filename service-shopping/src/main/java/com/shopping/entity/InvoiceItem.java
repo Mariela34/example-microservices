@@ -1,4 +1,6 @@
 package com.shopping.entity;
+import com.shopping.model.Customer;
+import com.shopping.model.Product;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -21,6 +23,8 @@ public class InvoiceItem {
     private Long productId;
 
 
+    @Transient
+    private Product product;
     @Transient
     private Double subTotal;
 
