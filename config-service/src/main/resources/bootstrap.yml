@@ -7,8 +7,6 @@ spring:
       server:
         git:
           search-paths: config-data
-          password: ${GIT_PASSWORD}
-          username: ${GIT_USER}
           uri: https://github.com/Mariela34/example-microservices.git
           default-label: main
         bootstrap: true
