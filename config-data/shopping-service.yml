@@ -10,6 +10,8 @@ server:
 # http://localhost:8093/h2-console
 # Enabling H2 Console
 spring:
+  application:
+    zipkin: http://localhost:9411 
   h2:
     console:
       enabled: true
