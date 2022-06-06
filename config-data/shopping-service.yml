@@ -1,6 +1,6 @@
 #Application Configuration
 server:
-  port: 8093
+  port: ${PORT:${SERVER_PORT:0}}
   error:
     include-message: always
     include-binding-errors: always
@@ -39,7 +39,10 @@ spring:
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+    
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8099/eureka
+  instance:
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
