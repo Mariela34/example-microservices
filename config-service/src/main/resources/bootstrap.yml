@@ -8,9 +8,13 @@ spring:
         git:
           search-paths: config-data
           uri: https://github.com/Mariela34/example-microservices.git
-          default-label: Docker-tests
+          default-label: main
         bootstrap: true
       enabled: true
   application:
     name: Config-Server
+  security:
+    user:
+      name: root
+      password: s3cr3t
 
