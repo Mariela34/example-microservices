@@ -12,32 +12,34 @@ server:
 spring:
   application:
     zipkin: http://localhost:9411 
-  h2:
-    console:
-      enabled: true
+  datasource:
+    password: 
+    url: jdbc:postgresql://postgres:5432/customer
+    username: sa
+  # h2:
+    # console:
+      # enabled: true
   # ===============================
   # DB
   # ===============================
-  datasource:
-    url: jdbc:h2:mem:customerDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-    driverClassName: org.h2.Driver
-    platform: h2
-    username: sa
-    password:
+ ## datasource:
+   # url: jdbc:h2:mem:customerDB;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+   # driverClassName: org.h2.Driver
+   # platform: h2
+   # username: sa
+    #password:
 
   # ===============================
   # JPA / HIBERNATE
   # ===============================
-  jpa:
-    show-sql: true
+   jpa:
     hibernate:
-      ddl-auto: update
-    database-platform: org.hibernate.dialect.H2Dialect
+        ddl-auto: create-drop
     properties:
-      hibernate:
-        show_sql: true
-        use_sql_comments: false
-        format_sql: false
+        hibernate:
+            dialect: org.hibernate.dialect.PostgreSQLDialect
+            format_sql: true
+    show-sql: true
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
