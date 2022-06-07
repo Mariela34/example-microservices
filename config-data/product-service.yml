@@ -1,6 +1,6 @@
 #Application Configuration
 server:
-  port: ${PORT:${SERVER_PORT:0}}
+  port: 8092
   error:
     include-message: always
     include-binding-errors: always
@@ -46,5 +46,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8099/eureka
-  instance:
-    instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
