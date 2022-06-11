@@ -13,9 +13,9 @@ spring:
   application:
     zipkin: http://localhost:9411 
   datasource:
-    password: 
-    url: jdbc:postgresql://postgres:5432/customer
-    username: sa
+    password: password
+    url: jdbc:postgresql://postgres:5432/customerDB
+    username: user
   # h2:
     # console:
       # enabled: true
